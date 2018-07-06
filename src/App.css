@@ -1,0 +1,104 @@
+
+.top {
+  padding-top: 6%; 
+  padding-left: 4.5%;
+}
+
+.lados {
+  padding: 2%;  
+}
+
+.root {
+  flex-grow: 1px;
+}
+
+.paper {
+  width: 165px;
+  margin: 8px;
+}
+
+.button {
+  margin-top: -71px !important; 
+  left: 131px;
+  background-color: white !important;
+  border-bottom: 1px solid #cdcdcd !important;
+  transition: transform .2s !important;
+  opacity: 0.78;
+  z-index: 1;
+}
+
+.button:hover{
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.input {
+  display: none;
+}
+
+.nomeLivros {
+  position: relative;
+  top: 0;
+  left: 0;
+  text-align: center;
+  padding: 5px 5px 5px 5px;
+  background-color: #d6e8ff;
+  width: 129px;
+  height: 64px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin-top: -7px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  border-radius: 3px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgLivro {
+  width: 100%;
+  height: 220px;
+
+}
+
+.imgT {
+  margin: 1.4%;
+  padding: 5px;
+}
+
+.imageTitle {
+  position: 'relative';
+  padding: 10px;
+}
+
+.botaoMenu {
+  padding-left: 91.7%;
+}
+
+
+.barraMenu {
+  box-shadow: 1px 1px 3px #cdcdcd;
+  background-color:#2196f3 ;
+}
+
+.imagemMenu {
+  width: 70px; 
+  height: 40px;
+  float: left;
+}
+
+.badgeCarrinho {
+  top: 10px !important;
+  right: 10px !important;
+  width: 12px !important;
+  height: 12px !important;
+  font-size: 0.60rem !important;
+}
+
+.carrinho {
+  margin-top: -10px;
+}
+
