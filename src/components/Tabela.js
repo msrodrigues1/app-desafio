@@ -8,13 +8,13 @@ import TableFooter from '@material-ui/core/TableFooter';
 import Paper from '@material-ui/core/Paper';
 import Livros from './Livros';
 import DeleteIcon from '@material-ui/icons/Delete';
-import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import '../App.css';
-import Contador, { qtd } from './Contador';
+import Contador  from './Contador';
 import Pedido from '../model/Pedido';
 import Formatador from '../utilitarios/Formatador';
-import Loading from './Loading';
+import Button from '@material-ui/core/Button';
+import Cart from '../model/Cart';
 
 class TabelaSimples extends React.Component {
 
@@ -46,30 +46,8 @@ class TabelaSimples extends React.Component {
         pedido.incrementar();
         this.setState({ pedidos: this.state.pedidos });
     }
-
-    excluirPedido(pedido) {
-        pedido.excluirPedido();
-        this.setState({ pedidos: this.state.pedidos });
-    }
-
+    
     render() {
-
-        const getContador = this.state.contador;
-        let btn1;
-        let btn2;
-
-        if (getContador > 1) {
-            btn1 = <Button onClick={this.decrementar.bind(this)}>-</Button>
-        } else {
-            btn1 = <Button disabled onClick={this.decrementar.bind(this)}>-</Button>
-        }
-
-        if (getContador < 10) {
-            btn2 = <Button onClick={this.incrementar.bind(this)}>+</Button>
-        } else {
-            btn2 = <Button disabled onClick={this.incrementar.bind(this)}>+</Button>
-        }
-
         return (
             <Paper>
                 <div className="divTabela">
@@ -99,9 +77,10 @@ class TabelaSimples extends React.Component {
                                             </IconButton>
                                         </TableCell>
                                     </TableRow>
-                                ); 
+                                );
                             })}
                         </TableBody>
+                       
                     </Table>
                 </div>
             </Paper>
@@ -116,22 +95,16 @@ export default (TabelaSimples);
 /*  <Loading className="finalizarCompra"/>  */
 
 /*
-
-<TableFooter>
-
+ <TableFooter>
                         {this.state.pedidos.map(value => {
                                 return (
                             <TableRow>
-                            <TableCell></TableCell>
                             <TableCell className="colunaPrecoTotal" numeric>{Formatador.formataPreco(value.getTotalPedido())}</TableCell>
-                            <TableCell></TableCell>
-                            <TableCell></TableCell>
                                 <TableCell>
                                     <Button variant="contained" color="primary" >Finalizar Compra</Button>
                                 </TableCell>
                             </TableRow>
                              );
                             })}
-                        </TableFooter>
-
+                        </TableFooter>              
 */
