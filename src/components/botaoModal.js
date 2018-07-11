@@ -60,8 +60,14 @@ class SimpleModal extends React.Component {
             <Typography variant="subheading" id="simple-modal-description">
               {this.props.livro === undefined ? '' : this.props.livro.desc}
             </Typography>
-            <div className='botaoDoModal'>
-              <Button variant="contained" color="primary">
+            <div>
+            
+            </div>
+            <div className="btnCartModal">
+            <Typography variant="title" className="txtModalValor" id="simple-modal-description">
+              Valor: {this.props.livro.preco}
+            </Typography>
+              <Button className="btnModalValor" variant="contained" color="primary">
                 <AddShoppingCartIcon />
               </Button>
             </div>

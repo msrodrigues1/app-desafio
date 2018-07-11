@@ -101,16 +101,6 @@ class TabelaSimples extends React.Component {
                                 );
                             })}
                         </TableBody>
-                            <TableRow>
-                                <TableCell numeric>Valor Total</TableCell>
-                            </TableRow>
-                        <TableFooter>
-                            <TableRow>
-                                <Button variant="contained" color="primary" >
-                                    Finalizar Compra
-                                </Button>
-                            </TableRow>
-                        </TableFooter>
                     </Table>
                 </div>
             </Paper>
@@ -120,3 +110,24 @@ class TabelaSimples extends React.Component {
 
 
 export default (TabelaSimples);
+
+/*
+
+<TableFooter>
+
+                        {this.state.pedidos.map(value => {
+                                return (
+                            <TableRow>
+                            <TableCell></TableCell>
+                            <TableCell className="colunaPrecoTotal" numeric>{Formatador.formataPreco(value.getTotalPedido())}</TableCell>
+                            <TableCell></TableCell>
+                            <TableCell></TableCell>
+                                <TableCell>
+                                    <Button variant="contained" color="primary" >Finalizar Compra</Button>
+                                </TableCell>
+                            </TableRow>
+                             );
+                            })}
+                        </TableFooter>
+
+*/
