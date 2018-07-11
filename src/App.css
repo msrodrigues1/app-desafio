@@ -79,9 +79,21 @@
   float: left;
 }
 
+.logo {
+  font-family: Georgia, 'Times New Roman', Times, serif !important;
+  font-size: 1.5rem !important;
+  float: left;
+  width: 20%;
+  padding: 5px;
+  color: #00FFFF !important;
+  text-decoration: underline;
+}
+
 .botaoLink1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
   text-decoration: none;
-  color: black !important;
+  color: #00FFFF !important;
+  display: inline-block;
 }
 
 .botaoLink2 {
