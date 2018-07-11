@@ -74,8 +74,18 @@
   padding: 10px;
 }
 
-.botaoMenu {
-  padding-left: 91.7%;
+.botaoHome{
+  width: 86.4%;
+  float: left;
+}
+
+.botaoLink1 {
+  text-decoration: none;
+  color: black !important;
+}
+
+.botaoLink2 {
+  color: black !important;
 }
 
 
@@ -102,3 +112,22 @@
   margin-top: -10px;
 }
 
+.divTabela {
+  width: 100% !important;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabela {
+  width: 900px !important;
+} 
+
+.contador {
+  padding-left: 30%; 
+}
+
+.colunaPrecoTotal {
+  min-width: 100px;
+}

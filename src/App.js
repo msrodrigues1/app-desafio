@@ -1,18 +1,17 @@
 import React from 'react';
 import './App.css';
 import Grid from './components/Grid';
-import Menu from './components/Menu';
-
+import Menus from './components/Menus';
 
 class App extends React.Component {
    
   render() {
     return (
       <div>
-        <Menu/>
+        <Menus/>
         <Grid/>
       </div>
-    );
+    );  
   }
 }
 

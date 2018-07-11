@@ -7,15 +7,13 @@ import IconButton from '@material-ui/core/IconButton';
 import Livros from './Livros';
 import Botao from './Botao';
 
-
-
 class GuttersGrid extends React.Component {
     render() {
         return (
             <Grid container className="root" justify="center">
-                <Grid item xs={9}>
+                <Grid item xs={9} >
                     <Grid container className="top">
-                        {Livros.map(value => (
+                        {Livros.map(value => (  
                             <Grid key={value.codigo} item >
                                 <Paper className="paper"> 
                                     <div className="imgT"> 
