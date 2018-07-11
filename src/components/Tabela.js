@@ -14,6 +14,7 @@ import '../App.css';
 import Contador, { qtd } from './Contador';
 import Pedido from '../model/Pedido';
 import Formatador from '../utilitarios/Formatador';
+import Loading from './Loading';
 
 class TabelaSimples extends React.Component {
 
@@ -98,7 +99,7 @@ class TabelaSimples extends React.Component {
                                             </IconButton>
                                         </TableCell>
                                     </TableRow>
-                                );
+                                ); 
                             })}
                         </TableBody>
                     </Table>
@@ -110,6 +111,9 @@ class TabelaSimples extends React.Component {
 
 
 export default (TabelaSimples);
+
+
+/*  <Loading className="finalizarCompra"/>  */
 
 /*
 

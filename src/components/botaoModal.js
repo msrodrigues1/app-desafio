@@ -60,8 +60,7 @@ class SimpleModal extends React.Component {
             <Typography variant="subheading" id="simple-modal-description">
               {this.props.livro === undefined ? '' : this.props.livro.desc}
             </Typography>
-            <div>
-            
+            <div>             
             </div>
             <div className="btnCartModal">
             <Typography variant="title" className="txtModalValor" id="simple-modal-description">
