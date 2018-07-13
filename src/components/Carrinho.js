@@ -8,7 +8,6 @@ class Carrinho extends React.Component {
   render() {
     return (
       <div>
-        <Menus/>
         <Tabela/>
       </div>
     );  

@@ -7,33 +7,38 @@ import IconButton from '@material-ui/core/IconButton';
 import Livros from './Livros';
 import Botao from './Botao';
 import Tooltip from '@material-ui/core/Tooltip';
+import {myContext} from '../Context/myContext';
+
 
 class GuttersGrid extends React.Component {
     render() {
         return (
-            <Grid container className="root" justify="center">
-                <Grid item xs={9} >
-                    <Grid container className="top">
-                        {Livros.map(value => (
-                            <Grid key={value.codigo} item >
-                                <Paper className="paper">
-                                    <div className="imgT">
-                                        <Botao livro={value} title={value.nome} width='50%' url={require('../img/' + value.img)}/>
-                                    </div>
-                                </Paper>
-                                <IconButton value="" color="primary" className="button" aria-label="Adicionar ao Carrinho de Compras">
-                                    <Tooltip leaveDelay={100} title="Adicionar no Carrinho">
-                                        <AddShoppingCartIcon />
-                                    </Tooltip>
-                                </IconButton>
-                            </Grid>
-                        ))}
+            <myContext.Consumer>
+                {testeClick => (
+                <Grid container className="root" justify="center">
+                    <Grid item xs={9} >
+                        <Grid container className="top">
+                            {Livros.map(value => (
+                                <Grid key={value.codigo} item >
+                                    <Paper className="paper">
+                                        <div className="imgT">
+                                            <Botao livro={value} title={value.nome} width='50%' url={require('../img/' + value.img)} />
+                                        </div>
+                                    </Paper>
+                                    <IconButton onClick={() => testeClick.click(value)} value="" color="primary" className="button" aria-label="Adicionar ao Carrinho de Compras">
+                                        <Tooltip leaveDelay={100} title="Adicionar no Carrinho">
+                                            <AddShoppingCartIcon />
+                                        </Tooltip>
+                                    </IconButton>
+                                </Grid>
+                            ))}
+                        </Grid>
                     </Grid>
                 </Grid>
-            </Grid>
-                    );
-                }
-            }
-            
-//<div className="nomeLivros">{value.nome}</div>
-                    export default (GuttersGrid);
+                )}
+            </myContext.Consumer>
+        );
+    }
+}
+
+export default (GuttersGrid);
