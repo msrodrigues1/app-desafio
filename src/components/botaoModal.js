@@ -4,7 +4,6 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
 function getModalStyle() {
   const top = 50;
@@ -66,9 +65,6 @@ class SimpleModal extends React.Component {
             <Typography variant="title" className="txtModalValor" id="simple-modal-description">
               Valor: {this.props.livro.preco}
             </Typography>
-              <Button className="btnModalValor" variant="contained" color="primary">
-                <AddShoppingCartIcon />
-              </Button>
             </div>
           </div>
         </Modal>

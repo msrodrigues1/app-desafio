@@ -52,9 +52,7 @@ class App extends React.Component {
   }
 
   delete(livro){
-    console.log(livro.codigo);
-    this.state.pedidos = this.state.pedidos.filter(pedido => livro.codigo !== pedido.livro.codigo);
-    this.setState({ pedidos: this.state.pedidos });
+    this.setState ({pedidos: this.state.pedidos.filter(pedido => livro.codigo !== pedido.livro.codigo)});
   }
 
   subTotal(){

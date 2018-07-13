@@ -85,28 +85,12 @@ function ButtonBases(props) {
   return (
     <div className={classes.root}>
         <ButtonBase
-          focusRipple
-          key={props.title}
-          className={classes.image}
-          focusVisibleClassName={classes.focusVisible}
-          style={{
-            width: props.width,
-          }}
-        >
-          <span
-            className={classes.imageSrc}
-            style={{
-              backgroundImage: `url(${props.url})`,
-            }}
-          />
+          focusRipple key={props.title} className={classes.image} 
+          focusVisibleClassName={classes.focusVisible} style={{width: props.width,}}>
+          <span className={classes.imageSrc} style={{backgroundImage: `url(${props.url})`, }}/>
           <span className={classes.imageBackdrop} />
           <span className={classes.imageButton}>
-            <Typography
-              component="span"
-              variant="subheading"
-              color="inherit"
-              className={classes.imageTitle}
-            >
+            <Typography component="span" variant="subheading" color="inherit"className={classes.imageTitle}>
               {props.title}
               <span className={classes.imageMarked} />
             </Typography>
