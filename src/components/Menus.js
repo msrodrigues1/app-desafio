@@ -1,8 +1,6 @@
 import Button from '@material-ui/core/Button';
 import React from 'react';
 import '../App.css';
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
-import Badge from '@material-ui/core/Badge';
 import { Link } from 'react-router';
 import Typography from '@material-ui/core/Typography';
 
@@ -17,12 +15,9 @@ function ButtonBases() {
                 </Button>
             </div>
             <div>
-                <Button size="large" >
+                <Button className="botaoCarrinho" size="large" >
                     <Link className="botaoLink2" to="/Carrinho">
-                        <AddShoppingCartIcon className="carrinho" />
-                        <Badge className="badgeCarrinho" badgeContent={1} color="secondary">
-                            <label className='sumiu' />
-                        </Badge>
+                        Carrinho
                     </Link>
                 </Button>
             </div>
@@ -32,3 +27,12 @@ function ButtonBases() {
 
 
 export default ButtonBases;
+
+
+
+/*
+<AddShoppingCartIcon className="carrinho" />
+    <Badge className="badgeCarrinho" badgeContent={1} color="secondary">
+        <label className='sumiu' />
+    </Badge>
+*/

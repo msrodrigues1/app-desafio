@@ -142,11 +142,11 @@ class ButtonBases extends React.Component {
             >
             <div style={getModalStyle()} className={classes.paper}>
               <Typography className={classes.tamanho} variant="title" id="modal-title">
-                {this.props.livro === undefined ? '' : this.props.livro.nome}
+                {this.props.livro.nome}
               </Typography>
               <Typography variant="subheading" id="simple-modal-description">
-                {this.props.livro === undefined ? '' : this.props.livro.desc}
-              </Typography>
+                {this.props.livro.desc}
+              </Typography> 
               <div>
               </div>
               <div className="btnCartModal">
