@@ -197,12 +197,12 @@
 
 .snackbarContent {
   background-color: #43a047 !important;
+  box-shadow: 0px 0px 0px !important;
 }
 
 .msgScankBar {
   position: relative;
   display: flex !important;
-  
 }
 
 .icon {
