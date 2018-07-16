@@ -105,12 +105,15 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
   text-decoration: none;
   color: #00FFFF !important;
+  margin: 7px;
 }
 
 
 .barraMenu {
   box-shadow: 1px 1px 3px #cdcdcd;
   background-color:#2196f3 ;
+  position: relative;
+  display: flex;
 }
 
 .imagemMenu {
@@ -209,4 +212,12 @@
   font-size: 20px !important;
   opacity: 0.9 !important;
   margin-right: 10px !important;
+}
+
+.badgeT {
+  color: floralwhite;
+  width: 20px !important;
+  background-color:#f50057 ;
+  margin: 7px;
+  border-radius: 25%;
 }

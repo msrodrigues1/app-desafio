@@ -103,7 +103,7 @@ class App extends React.Component {
         calcularTotal:this.calcularTotal,
       }}>
         <div>
-          <Menus />
+          <Menus qtdPedidos={this.qtdPedidos()} />
           {this.props.children}
         </div>
       </myContext.Provider>
