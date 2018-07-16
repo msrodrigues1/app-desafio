@@ -194,3 +194,19 @@
 .btnFinalizar {
   margin: 13px 0px 2px 105px!important;
 }
+
+.snackbarContent {
+  background-color: #43a047 !important;
+}
+
+.msgScankBar {
+  position: relative;
+  display: flex !important;
+  
+}
+
+.icon {
+  font-size: 20px !important;
+  opacity: 0.9 !important;
+  margin-right: 10px !important;
+}
