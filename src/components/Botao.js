@@ -20,7 +20,8 @@ const styles = theme => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
-    minWidth: 300,
+    minWidth: 150,
+    minHeight: 200,
     width: '100%',
   },
   image: {
@@ -28,7 +29,7 @@ const styles = theme => ({
     height: 200,
     [theme.breakpoints.down('xs')]: {
       width: '100% !important', // Overrides inline-style
-      height: 100,
+      height: 200,
     },
     '&:hover, &$focusVisible': {
       zIndex: 1,
@@ -94,6 +95,10 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing.unit * 12,
+    [theme.breakpoints.down('xs')]: {
+      width: '200px !important', // Overrides inline-style
+      height: 300,
+    },
   },
   tamanho: {
     paddingBottom: '10px',

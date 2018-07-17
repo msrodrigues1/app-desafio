@@ -4,18 +4,14 @@ import '../App.css';
 import { Link } from 'react-router';
 import Typography from '@material-ui/core/Typography';
 import { myContext } from '../Context/myContext';
+import Grid from '@material-ui/core/Grid';
 
 function ButtonBases(props) {
     return (
-        <div className="barraMenu">
-            <img src={require('../logo.svg')} className="imagemMenu" alt="" />
-            <div className="botaoHome">
+        <Grid container className="barraMenu">
+            <Grid item xs className="botaoHome">
+                <img src={require('../logo.svg')} className="imagemMenu" alt="" />
                 <Typography variant="title" className="logo">Livraria Autbank</Typography>
-                <Button size="large">
-                    <Link className="botaoLink1" to="/">Home</Link>
-                </Button>
-            </div>
-            <div>
                 <myContext.Consumer>
                     {testeBadge => (
                         <Button className="botaoCarrinho" size="large" >
@@ -26,25 +22,13 @@ function ButtonBases(props) {
                         </Button >
                     )}
                 </myContext.Consumer>
-            </div>
-        </div>
+                <Button className="btnH" size="large">
+                    <Link className="botaoLink1" to="/">Home</Link>
+                </Button>
+            </Grid>
+        </Grid>
     );
 }
 
 
 export default ButtonBases;
-
-
-
-                /*
-
-
-                
-
-
-
-        <AddShoppingCartIcon className="carrinho" />
-                    <Badge className="badgeCarrinho" badgeContent={1} color="secondary">
-                        <label className='sumiu' />
-                    </Badge>
-                    */

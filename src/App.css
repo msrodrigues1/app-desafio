@@ -1,7 +1,7 @@
 
 .top {
-  padding-top: 6%; 
-  padding-left: 4.5%;
+  padding-top: 3%; 
+  padding-left: 3%;
 }
 
 .lados {
@@ -78,7 +78,6 @@
   font-family: Georgia, 'Times New Roman', Times, serif !important;
   font-size: 1.5rem !important;
   float: left;
-  width: 20%;
   padding: 5px;
   color: #00FFFF !important;
   text-decoration: underline;
@@ -91,6 +90,7 @@
 
 .botaoCarrinho{
   padding: 0px!important;
+  float: right;
 }
 
 .botaoLink1 {
@@ -220,4 +220,8 @@
   background-color:#f50057 ;
   margin: 7px;
   border-radius: 25%;
+}
+
+.btnH {
+  float: right;
 }

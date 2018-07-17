@@ -4,7 +4,6 @@ import Menus from './components/Menus';
 import { myContext } from './Context/myContext';
 import Pedido from './model/Pedido';
 
-
 class App extends React.Component {
 
   constructor() {
@@ -109,6 +108,11 @@ class App extends React.Component {
       </myContext.Provider>
     );
   }
-}
+} 
 
 export default App;
+
+
+/*
+
+*/ 

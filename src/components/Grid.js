@@ -95,13 +95,13 @@ class GuttersGrid extends React.Component {
             <myContext.Consumer>
                 {testeClick => (
                     <Grid container className="root" justify="center">
-                        <Grid item xs={9} >
+                        <Grid item xs>
                             <Grid container className="top">
                                 {Livros.map(value => (
                                     <Grid key={value.codigo} item >
                                         <Paper className="paper">
                                             <div className="imgT">
-                                                <Botao livro={value} title={value.nome} width='50%' url={require('../img/' + value.img)} />
+                                                <Botao livro={value} title={value.nome} width='100%' url={require('../img/' + value.img)} />
                                             </div>
                                         </Paper>
                                         <a onClick={this.handleClick}>
