@@ -7,7 +7,6 @@ import IconButton from '@material-ui/core/IconButton';
 import Livros from './Livros';
 import Botao from './Botao';
 import Tooltip from '@material-ui/core/Tooltip';
-import { myContext } from '../Context/myContext';
 import PropTypes from 'prop-types';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import ErrorIcon from '@material-ui/icons/Error';
@@ -18,6 +17,8 @@ import Snackbar from '@material-ui/core/Snackbar';
 import SnackbarContent from '@material-ui/core/SnackbarContent';
 import WarningIcon from '@material-ui/icons/Warning';
 import { withStyles } from '@material-ui/core/styles';
+import { observer } from 'mobx-react';
+import Menus from '../components/Menus';
 
 
 const variantIcon = {
@@ -43,7 +44,7 @@ function MySnackbarContent(props) {
             aria-describedby="client-snackbar"
             message={
                 <span id="client-snackbar" className="msgScankBar">
-                    <Icon className="icon"/>
+                    <Icon className="icon" />
                     {message}
                 </span>
             }
@@ -73,6 +74,7 @@ MySnackbarContent.propTypes = {
 
 const MySnackbarContentWrapper = withStyles(styles1)(MySnackbarContent);
 
+@observer
 class GuttersGrid extends React.Component {
     state = {
         open: false,
@@ -90,39 +92,42 @@ class GuttersGrid extends React.Component {
         this.setState({ open: false });
     };
 
+    click(livro) {
+        this.props.store.click(livro);
+    };
+
     render() {
         return (
-            <myContext.Consumer>
-                {testeClick => (
-                    <Grid container className="root" justify="center">
-                        <Grid item xs>
-                            <Grid container className="top">
-                                {Livros.map(value => (
-                                    <Grid key={value.codigo} item >
-                                        <Paper className="paper">
-                                            <div className="imgT">
-                                                <Botao livro={value} title={value.nome} width='100%' url={require('../img/' + value.img)} />
-                                            </div>
-                                        </Paper>
-                                        <a onClick={this.handleClick}>
-                                            <IconButton onClick={() => testeClick.click(value)} value="" color="primary" className="button" aria-label="Adicionar ao Carrinho de Compras">
-                                                <Tooltip leaveDelay={100} title="Adicionar no Carrinho">
-                                                    <AddShoppingCartIcon />
-                                                </Tooltip>
-                                            </IconButton>
-                                        </a>
-                                        <Snackbar anchorOrigin={{ vertical: 'bottom', horizontal: 'left', }}
-                                            open={this.state.open} autoHideDuration={1200} onClose={this.handleClose}>
-                                            <MySnackbarContentWrapper onClose={this.handleClose}
-                                                variant="success" message="Produto Adicionado no Carrinho!"/>
-                                        </Snackbar>
-                                    </Grid>
-                                ))}
+            <div>
+                <Menus store={this.props.store} />
+            <Grid container className="root" justify="center">
+                <Grid item xs>
+                    <Grid container className="top">
+                        {Livros.map(value => (
+                            <Grid key={value.codigo} item >
+                                <Paper className="paper">
+                                    <div className="imgT">
+                                        <Botao livro={value} title={value.nome} width='100%' url={require('../img/' + value.img)} />
+                                    </div>
+                                </Paper>
+                                <a onClick={this.handleClick}>
+                                    <IconButton onClick={() => this.click(value)} value="" color="primary" className="button" aria-label="Adicionar ao Carrinho de Compras">
+                                        <Tooltip leaveDelay={100} title="Adicionar no Carrinho">
+                                            <AddShoppingCartIcon />
+                                        </Tooltip>
+                                    </IconButton>
+                                </a>
+                                <Snackbar anchorOrigin={{ vertical: 'bottom', horizontal: 'left', }}
+                                    open={this.state.open} autoHideDuration={1200} onClose={this.handleClose}>
+                                    <MySnackbarContentWrapper onClose={this.handleClose}
+                                        variant="success" message="Produto Adicionado no Carrinho!" />
+                                </Snackbar>
                             </Grid>
-                        </Grid>
+                        ))}
                     </Grid>
-                )}
-            </myContext.Consumer>
+                </Grid>
+            </Grid>
+            </div>
         );
     }
 }

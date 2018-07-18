@@ -11,15 +11,14 @@ import IconButton from '@material-ui/core/IconButton';
 import '../App.css';
 import Contador from './Contador';
 import Formatador from '../utilitarios/Formatador';
-import { myContext } from '../Context/myContext';
 import { Typography } from '../../node_modules/@material-ui/core';
+import {observer} from 'mobx-react';
 
+@observer
 class TabelaSimples extends React.Component {
 
     render() {
         return (
-            <myContext.Consumer>
-                {lista => (
                     <div className="cPaper">
                     <Paper className="paper1">
                         <div className="divTabela">
@@ -34,17 +33,17 @@ class TabelaSimples extends React.Component {
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
-                                    {lista.pedidos.map(value => {
+                                    {this.props.store.carrinho.map(value => {
                                         return (
                                             <TableRow className="tabelaLinha" key={value.livro.codigo}>
                                                 <TableCell>
-                                                    <Contador onClickDecremento={() => lista.decrementar(value)} onClickIncremento={() => lista.incrementar(value)} qtd={value.qtd} />
+                                                    <Contador onClickDecremento={() => value.decrementar(value)} onClickIncremento={() => value.incrementar(value)} qtd={value.qtd} />
                                                 </TableCell>
                                                 <TableCell >{value.livro.nome}</TableCell>
                                                 <TableCell numeric>{Formatador.formataPreco(value.livro.preco)}</TableCell>
                                                 <TableCell className="colunaPrecoTotal" numeric>{Formatador.formataPreco(value.getTotalPedido())}</TableCell>
                                                 <TableCell>
-                                                    <IconButton aria-label="Delete" onClick={() => lista.delete(value.livro)}>
+                                                    <IconButton aria-label="Delete" onClick={() => this.props.store.delete(value.livro)}>
                                                         <DeleteIcon />
                                                     </IconButton>
                                                 </TableCell>
@@ -58,19 +57,17 @@ class TabelaSimples extends React.Component {
                     </Paper>
                     <Paper className="paper2">
                         <Typography>SubTotal</Typography>
-                        <Typography className="typoTeste">{Formatador.formataPreco(lista.subTotal())}</Typography>
+                        <Typography className="typoTeste">{Formatador.formataPreco(this.props.store.subTotal())}</Typography>
                         
                         <Typography>Desconto</Typography>
-                        <Typography className="typoTeste">{Formatador.formataPreco(lista.desconto())}</Typography>
+                        <Typography className="typoTeste">{Formatador.formataPreco(this.props.store.desconto())}</Typography>
 
                         <Typography>Total</Typography>
-                        <Typography className="typoTeste">{Formatador.formataPreco(lista.calcularTotal())}</Typography>
+                        <Typography className="typoTeste">{Formatador.formataPreco(this.props.store.calcularTotal())}</Typography>
                         
                         <Button className="btnFinalizar" variant="contained" color="primary" >Finalizar Compra</Button>
                     </Paper>
                     </div>
-                )}
-            </myContext.Consumer>
         );
     }
 }
