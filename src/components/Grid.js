@@ -111,7 +111,7 @@ class GuttersGrid extends React.Component {
                                                 </Tooltip>
                                             </IconButton>
                                         </a>
-                                        <Snackbar anchorOrigin={{ vertical: 'bottom', horizontal: 'left', }}
+                                        <Snackbar anchorOrigin={{ vertical: 'bottom', horizontal: 'right', }}
                                             open={this.state.open} autoHideDuration={1200} onClose={this.handleClose}>
                                             <MySnackbarContentWrapper onClose={this.handleClose}
                                                 variant="success" message="Produto Adicionado no Carrinho!"/>

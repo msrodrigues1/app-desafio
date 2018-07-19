@@ -3,6 +3,7 @@ import './App.css';
 import Menus from './components/Menus';
 import { myContext } from './Context/myContext';
 import Pedido from './model/Pedido';
+import Drawers from './Teste/Drawers';
 
 class App extends React.Component {
 
@@ -102,8 +103,7 @@ class App extends React.Component {
         calcularTotal:this.calcularTotal,
       }}>
         <div>
-          <Menus qtdPedidos={this.qtdPedidos()} />
-          {this.props.children}
+          <Drawers content={this.props.children}/>
         </div>
       </myContext.Provider>
     );
@@ -114,5 +114,6 @@ export default App;
 
 
 /*
-
+<Menus qtdPedidos={this.qtdPedidos()} />
+ {this.props.children}
 */ 
