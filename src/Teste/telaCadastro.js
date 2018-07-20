@@ -5,12 +5,11 @@ import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Email from '@material-ui/icons/Email';
-import { Typography, Button } from '../../node_modules/@material-ui/core';
+import { Button } from '../../node_modules/@material-ui/core';
 import '../App.css';
+import Name from '@material-ui/icons/AccountCircle';
 import Senha from '@material-ui/icons/Lock';
 import { myContext } from '../Context/myContext';
-import Cadastro from '../Teste/telaCadastro';
-
 
 
 const styles = theme => ({
@@ -63,10 +62,12 @@ class TextFields extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            usuario: [],
-            email: '',
-            password: '',
+                nome: '',
+                email: '',
+                password: '',
+                confirmarPassword: '',
         }
+
         this.onChange = this.onChange.bind(this);
         this.onClick = this.onClick.bind(this);
     }
@@ -74,6 +75,7 @@ class TextFields extends React.Component {
     onChange(e) {
         this.setState({ [e.target.name]: e.target.value });
     }
+
     onClick(e) {
         e.preventDefault();
         console.log(this.state);
@@ -83,14 +85,21 @@ class TextFields extends React.Component {
         const { classes } = this.props;
         return (
             <myContext.Consumer>
-                {testeLogin => (
+                {testeCadastro => (
                     <div >
-                        <div className={classes.div}>
-                            <Typography variant="title" className={classes.letra}>Login</Typography>
-                        </div>
                         <Paper className={classes.paper}>
                             <form className={classes.container} noValidate autoComplete="off">
-                                <TextField id="with-placeholder" label="E-mail" type="email"
+                                <TextField id="name" label="Nome" type="name"
+                                    className={classes.textField} margin="normal"
+                                    value={this.state.name} onChange={this.onChange} name="nome"
+                                    InputProps={{
+                                        startAdornment: (
+                                            <InputAdornment position="start">
+                                                <Name className={classes.cor} />
+                                            </InputAdornment>
+                                        ),
+                                    }} />
+                                <TextField id="email" label="E-mail" type="email"
                                     className={classes.textField} margin="normal"
                                     value={this.state.email} onChange={this.onChange} name="email"
                                     InputProps={{
@@ -110,10 +119,19 @@ class TextFields extends React.Component {
                                             </InputAdornment>
                                         ),
                                     }} />
+                                <TextField id="confirmarPassword-input" label="Repetir Senha" className={classes.textField}
+                                    type="password" autoComplete="current-password" margin="normal"
+                                    value={this.state.confirmarPassword} onChange={this.onChange} name="confirmarPassword"
+                                    InputProps={{
+                                        startAdornment: (
+                                            <InputAdornment position="start">
+                                                <Senha className={classes.cor} />
+                                            </InputAdornment>
+                                        ),
+                                    }} />
                                 <Button onClick={this.onClick} variant="contained" color="primary" className={classes.btnLogin}>
-                                    Entrar
+                                    Cadastrar
                                 </Button>
-
                             </form>
                         </Paper>
                     </div>

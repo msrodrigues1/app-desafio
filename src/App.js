@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import Menus from './components/Menus';
 import { myContext } from './Context/myContext';
 import Pedido from './model/Pedido';
 import Drawers from './Teste/Drawers';
