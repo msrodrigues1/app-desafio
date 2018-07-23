@@ -9,7 +9,6 @@ import { Typography, Button } from '../../node_modules/@material-ui/core';
 import '../App.css';
 import Senha from '@material-ui/icons/Lock';
 import { myContext } from '../Context/myContext';
-import Cadastro from '../Teste/telaCadastro';
 
 
 
@@ -113,7 +112,6 @@ class TextFields extends React.Component {
                                 <Button onClick={this.onClick} variant="contained" color="primary" className={classes.btnLogin}>
                                     Entrar
                                 </Button>
-
                             </form>
                         </Paper>
                     </div>
