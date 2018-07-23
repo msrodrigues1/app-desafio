@@ -62,18 +62,18 @@ class TextFields extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            usuario: [],
             email: '',
             password: '',
         }
-        this.onChange = this.onChange.bind(this);
-        this.onClick = this.onClick.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    onChange(e) {
+    handleChange(e) {
         this.setState({ [e.target.name]: e.target.value });
     }
-    onClick(e) {
+    
+    handleClick(e) {
         e.preventDefault();
         console.log(this.state);
     }
@@ -88,10 +88,10 @@ class TextFields extends React.Component {
                             <Typography variant="title" className={classes.letra}>Login</Typography>
                         </div>
                         <Paper className={classes.paper}>
-                            <form className={classes.container} noValidate autoComplete="off">
+                            <form onSubmit={this.handleSubmit} className={classes.container} noValidate autoComplete="off">
                                 <TextField id="with-placeholder" label="E-mail" type="email"
                                     className={classes.textField} margin="normal"
-                                    value={this.state.email} onChange={this.onChange} name="email"
+                                    value={this.state.email} onChange={this.handleChange} name="email"
                                     InputProps={{
                                         startAdornment: (
                                             <InputAdornment position="start">
@@ -101,7 +101,7 @@ class TextFields extends React.Component {
                                     }} />
                                 <TextField id="password-input" label="Senha" className={classes.textField}
                                     type="password" autoComplete="current-password" margin="normal"
-                                    value={this.state.password} onChange={this.onChange} name="password"
+                                    value={this.state.password} onChange={this.handleChange} name="password"
                                     InputProps={{
                                         startAdornment: (
                                             <InputAdornment position="start">
@@ -109,7 +109,7 @@ class TextFields extends React.Component {
                                             </InputAdornment>
                                         ),
                                     }} />
-                                <Button onClick={this.onClick} variant="contained" color="primary" className={classes.btnLogin}>
+                                <Button onClick={this.handleClick} variant="contained" color="primary" className={classes.btnLogin}>
                                     Entrar
                                 </Button>
                             </form>
